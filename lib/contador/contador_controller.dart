@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:imc_mobx/model/full_name.dart';
 import 'package:mobx/mobx.dart';
 
 class ContadorController {
@@ -33,25 +34,5 @@ class ContadorController {
 
     // ! Por:
     _fullName.value = _fullName.value.copyWith(first: 'Manuel', last: 'Santos');
-  }
-}
-
-class FullName {
-  String first;
-  String last;
-
-  FullName({
-    required this.first,
-    required this.last,
-  });
-
-  FullName copyWith({
-    String? first,
-    String? last,
-  }) {
-    return FullName(
-      first: first ?? this.first,
-      last: last ?? this.last,
-    );
   }
 }
