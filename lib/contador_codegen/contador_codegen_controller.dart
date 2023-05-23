@@ -1,10 +1,9 @@
-// ignore_for_file: library_private_types_in_public_api
-
 import 'package:imc_mobx/model/full_name.dart';
 import 'package:mobx/mobx.dart';
 
 part 'contador_codegen_controller.g.dart';
 
+// ignore: library_private_types_in_public_api
 class ContadorCodegenController = _ContadorCodegenControllerBase
     with _$ContadorCodegenController;
 
@@ -21,6 +20,10 @@ abstract class _ContadorCodegenControllerBase with Store {
   @action
   void increment() {
     counter++;
+  }
+
+  @action
+  void changeName() {
     fullName = fullName.copyWith(first: 'manuel', last: 'santos');
   }
 }

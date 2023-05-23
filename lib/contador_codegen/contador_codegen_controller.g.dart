@@ -65,6 +65,17 @@ mixin _$ContadorCodegenController on _ContadorCodegenControllerBase, Store {
   }
 
   @override
+  void changeName() {
+    final _$actionInfo = _$_ContadorCodegenControllerBaseActionController
+        .startAction(name: '_ContadorCodegenControllerBase.changeName');
+    try {
+      return super.changeName();
+    } finally {
+      _$_ContadorCodegenControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 counter: ${counter},
