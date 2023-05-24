@@ -4,6 +4,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:imc_mobx/imc/imc_controller.dart';
 import 'package:imc_mobx/widgets/imc_gauge.dart';
 import 'package:intl/intl.dart';
+import 'package:mobx/mobx.dart';
 
 class ImcPage extends StatefulWidget {
   const ImcPage({Key? key}) : super(key: key);
@@ -17,13 +18,34 @@ class _ImcPageState extends State<ImcPage> {
   final _pesoEC = TextEditingController();
   final _alturaEC = TextEditingController();
   final _formKey = GlobalKey<FormState>();
+  final reactionDisposer = <ReactionDisposer>[];
   var imc = 0.0;
 
   @override
+  void initState() {
+    super.initState();
+
+    final reactionErrorDisposer =
+        reaction<bool>((_) => _controller.hasError, (hasError) {
+      if (hasError) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(_controller.error ?? 'Erro ao verificar o IMC!'),
+          ),
+        );
+      }
+    });
+
+    reactionDisposer.add(reactionErrorDisposer);
+  }
+
+  @override
   void dispose() {
+    super.dispose();
     _pesoEC.dispose();
     _alturaEC.dispose();
-    super.dispose();
+    // ignore: avoid_function_literals_in_foreach_calls
+    reactionDisposer.forEach((reactionDisposer) => reactionDisposer());
   }
 
   @override
