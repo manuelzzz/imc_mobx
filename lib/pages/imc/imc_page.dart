@@ -1,7 +1,7 @@
 import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:imc_mobx/imc/imc_controller.dart';
+import 'package:imc_mobx/pages/imc/imc_controller.dart';
 import 'package:imc_mobx/widgets/imc_gauge.dart';
 import 'package:intl/intl.dart';
 import 'package:mobx/mobx.dart';

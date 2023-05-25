@@ -3,7 +3,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:imc_mobx/contador_codegen/contador_codegen_controller.dart';
+import 'package:imc_mobx/pages/contador_codegen/contador_codegen_controller.dart';
 import 'package:mobx/mobx.dart';
 
 class ContadorCodegenPage extends StatefulWidget {
