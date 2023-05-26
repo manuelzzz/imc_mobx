@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:imc_mobx/pages/observables/observable_model/observable_model_page.dart';
+import 'package:imc_mobx/pages/observables/future/future_page.dart';
+// import 'package:imc_mobx/pages/observables/observable_model/observable_model_page.dart';
 // import 'package:imc_mobx/contador/contador_page.dart';
 // import 'package:imc_mobx/contador_codegen/contador_codegen_page.dart';
 // import 'package:imc_mobx/pages/imc/imc_page.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ObservableModelPage(),
+      home: const FuturePage(),
     );
   }
 }
