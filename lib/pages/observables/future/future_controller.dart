@@ -5,13 +5,15 @@ class FutureController = FutureControllerBase with _$FutureController;
 
 abstract class FutureControllerBase with Store {
   @observable
-  var nomeFuture = Future.value('').asObservable();
+  var nomeFuture = ObservableFuture.value('');
 
   Future<void> buscarNome() async {
-    nomeFuture = Future.delayed(
+    final buscaNomeFuture = Future.delayed(
       const Duration(seconds: 2),
       () => 'Manuel Santos',
-    ).asObservable();
+    );
+
+    nomeFuture = ObservableFuture(buscaNomeFuture);
     // return 'Manuel Santos';
   }
 }
